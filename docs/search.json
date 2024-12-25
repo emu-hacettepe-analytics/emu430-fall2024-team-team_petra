@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Team XXX",
+    "title": "EMU Data Analytics Project",
     "section": "",
-    "text": "This is our project webpage.\nPlease stay tuned to follow our project activities.\nThis is our template.\n\nTeam Members\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\nProject Topic\n\n\nData Set\n\n\n\n\n Back to top"
+    "text": "WELCOME TO THE EMU!\n\n\n\nThis is our data analytics project.\n\n\nTeam Members\n\n\n\nNecati Keleşer\n\n\nBihter Hasdemir\n\n\nÖykü Tütüncü\n\n\nAhmet Kürşad Gürel\n\n\n\nProject Topic\n\n\nPoverty and crime are two pervasive societal issues that often exhibit a complex relationship. This study aims to explore the impact of poverty rates on crime, focusing on the interplay between socioeconomic disparities and criminal behavior. Using data analytics techniques, we analyze crime statistics and poverty rates across various regions to uncover potential correlations and causations.\n\n\nData Sets\n\n\n\nConvicted offenders admitted to penal institutions by type of crime and province where the crime was committed, 2011-2020. (Source: TUİK)\n\n\nRegional poverty numbers and poverty rates based on equivalent household disposable income per capita, 2014-2023. (Source: TUİK)\n\n\n\nProject’s Steps\n\n\n\nData Cleaning and Preparation\n\n\nAnalysis of Relationships\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html",
@@ -25,6 +25,6 @@
     "href": "data.html",
     "title": "Data",
     "section": "",
-    "text": "Data source: xxx\n\n\n\n Back to top"
+    "text": "Back to top"
   }
 ]

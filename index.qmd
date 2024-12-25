@@ -1,24 +1,113 @@
+
 ---
-title: "Team XXX"
-sidebar: false 
+title: "EMU Data Analytics Project"
+format: html
+toc: false
 ---
 
-This is our project webpage.
+<style>
+  #quarto-sidebar {
+    display: none; /* Completely hide the sidebar */
+  }
+  .quarto-sidebar-collapse-item {
+    display: none; /* Hide any collapsible sidebar */
+  }
+</style>
+---
+title: "EMU Data Analytics Project"
+format: html
+---
 
-Please stay tuned to follow our project activities.
+<style>
+  /* Global background */
+  body {
+    background-image: url("assets/photos/background.jpg"); /* Replace with your actual path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: black; /* Default text color */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full screen height */
+  }
 
-This is our template.
+  /* Main content box */
+  .content-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Light gray/white background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 900px; /* Limit content width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    width: 80%; /* Make it responsive */
+    text-align: center; /* Center text inside the box */
+  }
 
-# Team Members
+  /* Title Styling */
+  h1 {
+    color: white; /* Make the main title white */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
 
-1.  [Edin_Džeko](https://tr.wikipedia.org/wiki/Edin_D%C5%BEeko)
+  /* Subtitles and other headings */
+  h2 {
+    color: #333333; /* Darker gray for subheadings */
+  }
 
-2.  [Dušan Tadić](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
+  /* Styling for lists and paragraphs */
+  ul {
+    line-height: 1.6;
+    margin: 10px 0 20px;
+    text-align: left; /* Align lists to the left */
+  }
 
-3.  [Frederico Rodrigues de Paula Santos](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
+  p {
+    line-height: 1.6;
+    text-align: justify; /* Justify paragraph text */
+  }
 
-4.  [Sebastian Szymański](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+  img {
+    display: block;
+    margin: 0 auto 20px; /* Center the image */
+  }
+</style>
 
-# Project Topic
+<div class="content-box">
+  <h2>WELCOME TO THE EMU!</h2>
 
-# Data Set
+  ![](assets/photos/Word%20Is%20Ours%20!.webp){width="480"}
+
+  <p>This is our data analytics project.</p>
+
+  <h2>Team Members</h2>
+  <ul>
+    <li>Necati Keleşer</li>
+    <li>Bihter Hasdemir</li>
+    <li>Öykü Tütüncü</li>
+    <li>Ahmet Kürşad Gürel</li>
+  </ul>
+
+  <h2>Project Topic</h2>
+  <p>
+    Poverty and crime are two pervasive societal issues that often exhibit a complex relationship. This study aims to explore the impact of poverty rates on crime, focusing on the interplay between socioeconomic disparities and criminal behavior. Using data analytics techniques, we analyze crime statistics and poverty rates across various regions to uncover potential correlations and causations.
+  </p>
+
+  <h2>Data Sets</h2>
+  <ul>
+    <li>
+      Convicted offenders admitted to penal institutions by type of crime and province where the crime was committed, 2011-2020. (<strong>Source:</strong> TUİK)
+    </li>
+    <li>
+      Regional poverty numbers and poverty rates based on equivalent household disposable income per capita, 2014-2023. (<strong>Source:</strong> TUİK)
+    </li>
+  </ul>
+
+  <h2>Project's Steps</h2>
+  <ol>
+    <li>Data Cleaning and Preparation</li>
+    <li>Analysis of Relationships</li>
+  </ol>
+</div>
