@@ -9,9 +9,8 @@ title: "Data"
 ```{r}
 # This file contains poverty line in 2019- 2020 and also it contains this data in term of reagions:
 library(readxl)
-library(kableExtra)
 
-poverty_rate_19_20 <- read_excel("assets/datas/Poverty Rate 2020-2019.xlsx")
+poverty_rate_19_20 <- read_excel("C:/Users/Necati/Desktop/Poverty Rate 2020-2019.xlsx")
 
 str(poverty_rate_19_20)
 
@@ -21,7 +20,7 @@ print(poverty_rate_19_20)
 2020 yılına ait erkek verilerinin temizlenmesi:
 
 ```{r}
-data_collect_erkek <- read_excel("assets/datas/Data_collection_erkek.xlsx")
+data_collect_erkek <- read_excel("C:/Users/Necati/Desktop/Data_collection_erkek.xlsx")
 temiz_veri_erkek <- na.omit(data_collect_erkek)          
 
 veri_temiz_erkek <- data_collect_erkek[rowSums(is.na(data_collect_erkek)) != ncol(data_collect_erkek), ]
