@@ -45,7 +45,7 @@ b
 
 ```
 
-2020 Erkek verileri :
+2020 Erkek verileri : Necati
 
 ```{r}
 library(ggrepel)
