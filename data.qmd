@@ -1,3 +1,90 @@
 ---
 title: "Data"
 ---
+
+## Region Names
+
+![](/assets/photos/Reagions.jpeg){width="300"}
+
+```{r}
+# This file contains poverty line in 2019- 2020 and also it contains this data in term of reagions:
+library(readxl)
+library(kableExtra)
+
+poverty_rate_19_20 <- read_excel("assets/datas/Poverty Rate 2020-2019.xlsx")
+
+str(poverty_rate_19_20)
+
+print(poverty_rate_19_20)
+```
+
+2020 yılına ait erkek verilerinin temizlenmesi:
+
+```{r}
+data_collect_erkek <- read_excel("assets/datas/Data_collection_erkek.xlsx")
+temiz_veri_erkek <- na.omit(data_collect_erkek)          
+
+veri_temiz_erkek <- data_collect_erkek[rowSums(is.na(data_collect_erkek)) != ncol(data_collect_erkek), ]
+
+data_son_temiz_erkek <- veri_temiz_erkek[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+str(data_son_temiz_erkek)
+```
+
+2020 kadın verilerini temizlenmesi :
+
+```{r}
+data_collect_kadin <- read_excel("assets/datas/Data_collection_kadin.xlsx")
+# NA iceren satirlari silmek
+temiz_veri_kadin <- na.omit(data_collect_kadin)          
+
+
+veri_temiz_kadin <- data_collect_kadin[rowSums(is.na(data_collect_kadin)) != ncol(data_collect_kadin), ]
+
+
+data_son_temiz_kadin <- veri_temiz_kadin[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+
+str(data_son_temiz_kadin)
+
+```
+
+2019 erkek verilerinin ayıklanması :
+
+```{r}
+data_collect_erkek_2019 <- read_excel("assets/datas/Data_collection_kadin.xlsx")
+# NA iceren satirlari silmek
+temiz_veri_erkek_2019 <- na.omit(data_collect_erkek_2019)          
+
+
+veri_temiz_erkek_2019 <- data_collect_erkek_2019[rowSums(is.na(data_collect_erkek_2019)) != ncol(data_collect_erkek_2019), ]
+
+
+data_son_temiz_erkek_2019 <- veri_temiz_erkek_2019[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+
+str(data_son_temiz_erkek_2019)
+
+```
+
+kadın - 2019 :
+
+```{r}
+data_collect_kadin_2019 <- read_excel("assets/datas/Data_collection_2019_kadin.xlsx")
+
+# NA içeren satırları silmek
+temiz_veri_kadin_2019 <- na.omit(data_collect_kadin_2019)
+
+veri_temiz_kadin_2019 <- data_collect_kadin_2019[rowSums(is.na(data_collect_kadin_2019)) != ncol(data_collect_kadin_2019), ]
+
+data_son_temiz_kadin_2019 <- veri_temiz_kadin_2019[-c(
+  1, 2, 5, 6, 7, 9, 10, 13, 14, 15,
+  17, 18, 19, 20, 22, 23, 24, 26, 27, 28,
+  29, 30, 33, 34, 36, 37, 38, 40, 41, 43,
+  44, 45, 47, 48, 49, 50, 51, 53, 54, 55,
+  57, 58, 59, 61, 62, 63, 65, 66, 67, 68,
+  70, 71, 72, 73, 74, 75, 77, 78, 79, 81,
+  82, 83, 84, 86, 87, 88, 89, 91, 92, 93,
+  94, 96, 97, 98, 100, 101, 103, 104, 105, 106
+), ]
+
+str(data_son_temiz_kadin_2019)
+
+```

@@ -5,5 +5,62 @@ title: "Analysis"
 About this site
 
 ```{r}
-1 + 1
+library(magrittr)
+library(ggthemes)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+```
+
+```{r}
+
+# Veri: poverty_rate_19_20 (örnekte 2 sütun var: Poverty_Rate_20 ve Poverty_Rate_19)
+
+poverty_rate_long <- poverty_rate_19_20 %>%
+  pivot_longer(
+    cols = c('Poverty Rate_20', 'Poverty Rate_19'),  # Artık alt çizgili, boşluksuz sütun adlarını kullanıyoruz
+    names_to = "Year",
+    values_to = "Poverty_Rate"
+  )
+
+b <- ggplot(poverty_rate_long, 
+            aes(x = Region_Number, 
+                y = Poverty_Rate, 
+                colour = Year, 
+                group = Year)) + 
+  geom_point(size = 2) +  
+  geom_line(size = 1) +   
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(
+    title = "Poverty Rate: 2020 vs 2019", 
+    x = "Region Number", 
+    y = "Poverty Rate (%)", 
+    colour = "Year"
+  )
+
+b
+
+```
+
+2020 Erkek verileri :
+
+```{r}
+library(ggrepel)
+b<- ggplot(data_son_temiz_erkek, aes(x = 'Poverty Rate (%)', y = Threat, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Homicide -Male20",
+       x = "Poverty Rate (%)",
+       y = "Homicide") +
+  scale_x_continuous(limits = c(6,18))+
+  scale_y_continuous(limits = c(0,1026))+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50)+theme_fivethirtyeight()
+b
+```
+
+```{r}
+
 ```
