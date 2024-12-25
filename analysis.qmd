@@ -61,6 +61,81 @@ b<- ggplot(data_son_temiz_erkek, aes(x = 'Poverty Rate (%)', y = Threat, color =
 b
 ```
 
+2020 Kadın Verileri
 ```{r}
+b <- ggplot(data_son_temiz_kadin, aes(x = `Poverty Rate (%)`, y = Homicide, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Homicide -Female20",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(6,18)) +
+  scale_y_continuous(limits = c(0,28)) +  
+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50) +
+  theme_fivethirtyeight()
+
+print(b)
 
 ```
+2019 Erkek Verileri
+```{r}
+b <- ggplot(data_son_temiz_erkek_19, aes(x = `Poverty Rate (%)`, y = Homicide, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") +  # Regresyon çizgisi ekleme
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Homicide -Male19",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(4, 16)) +  # X ekseni limitleri
+  scale_y_continuous(limits = c(0, 1605)) +  # Y ekseni limitleri
+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50) +  # Etiketler için
+  theme_fivethirtyeight()  # Grafik teması
+
+# Grafiği yazdırma
+print(b)
+
+# Minimum ve maksimum değerleri hesaplama
+min_value <- min(data_son_temiz_erkek_19$`Poverty Rate (%)`, na.rm = TRUE)
+max_value <- max(data_son_temiz_erkek_19$`Poverty Rate (%)`, na.rm = TRUE)
+
+# Sonuçları yazdırma
+print(min_value)
+print(max_value)
+
+# Pearson korelasyonu hesaplama
+correlation_result <- cor.test(data_son_temiz_erkek_19$`Poverty Rate (%)`, data_son_temiz_erkek_19$Homicide, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+```
+2019 Kadın Verileri
+```{r}
+b<- ggplot(data_son_temiz_kadin_19, aes(x = `Poverty Rate (%)`, y = Homicide, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Homicide -Male19",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(4,16))+
+  scale_y_continuous(limits = c(0,50))+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50)+theme_fivethirtyeight()
+b
+
+min_value <- min(data_son_temiz_kadin_19$Homicide, na.rm = TRUE)
+max_value <- max(data_son_temiz_kadin_19$Homicide, na.rm = TRUE)
+
+# Sonuçları yazdırmak
+min_value
+max_value
+
+
+# Pearson korelasyonu hesaplamak
+correlation_result <- cor.test(data_son_temiz_kadin_19$`Poverty Rate (%)`, data_son_temiz_kadin_19$Homicide, method = "pearson")
+
+# Sonuçları görüntülemek
+correlation_result
+
+```
+
+
