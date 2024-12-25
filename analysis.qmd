@@ -86,7 +86,7 @@ sum(is.na(data_son_temiz_erkek$`Poverty Rate (%)`))
 
 2020 Kadın Verileri
 
-```{r}
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
 data_collect_kadin <- read_excel("assets/datas/Data_collection_kadin.xlsx")
 # NA iceren satirlari silmek
 temiz_veri_kadin <- na.omit(data_collect_kadin)          
