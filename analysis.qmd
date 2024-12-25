@@ -116,6 +116,11 @@ b <- ggplot(data_son_temiz_kadin, aes(x = `Poverty Rate (%)`, y = Homicide, colo
 
 print(b)
 
+correlation_result <- cor.test(data_son_temiz_kadin$`Poverty Rate (%)`, data_son_temiz_kadin$Homicide, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+
 ```
 
 2019 Erkek Verileri
