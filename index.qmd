@@ -90,7 +90,7 @@ format: html
 
 <ul>
 
-<li>Necati Keleşer</li>
+<li>[Necati Keleşer](https://emu-hacettepe-analytics.github.io/emu430-fall2024-nkeleser/)</li>
 
 <li>Bihter Hasdemir</li>
 

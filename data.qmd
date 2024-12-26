@@ -2,12 +2,38 @@
 title: "Data"
 ---
 
-## Region Names
+## Library Presentation
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(readxl)
+library(ggthemes)
+library(dplyr)
+
+
+```
+
+## Data Source
+
+\[poverty_rate_19_20\] data1
+
+\[data_collect_erkek_2020\] data2
+
+\[data_collect_kadın_2020\] data3
+
+\[data_collect_erkek_2019\] data4
+
+\[data_collect_kadın_2019\] data5
+
+## Region Number (Düzeltilicek)
 
 ![](/assets/photos/Reagions.jpeg){width="300"}
 
+## Poverty Rate in 2019-2020 Data
+
 ```{r}
-# This file contains poverty line in 2019- 2020 and also it contains this data in term of reagions:
+# This file contains poverty line in 2019- 2020 and also it contains this data in term of reginons:
 library(readxl)
 
 poverty_rate_19_20 <- read_excel("C:/Users/Necati/Desktop/Poverty Rate 2020-2019.xlsx")
@@ -17,9 +43,10 @@ str(poverty_rate_19_20)
 print(poverty_rate_19_20)
 ```
 
-2020 yılına ait erkek verilerinin temizlenmesi:
+## Cleaning 2020 Male Data
 
 ```{r}
+# This file contains poverty line and number of crime in 2020 male data
 data_collect_erkek <- read_excel("C:/Users/Necati/Desktop/Data_collection_erkek.xlsx")
 temiz_veri_erkek <- na.omit(data_collect_erkek)          
 
@@ -31,11 +58,13 @@ sum(is.na(data_son_temiz_erkek))
 
 ```
 
-2020 kadın verilerini temizlenmesi :
+## Cleaning 2020 Female Data
 
 ```{r}
-data_collect_kadin <- read_excel("assets/datas/Data_collection_kadin.xlsx")
-# NA iceren satirlari silmek
+# This file contains poverty line adn number of crime in 2020 female data
+
+data_collect_kadin <- read_excel("C:/Users/Necati/Desktop/Data_collection_kadin.xlsx")
+
 temiz_veri_kadin <- na.omit(data_collect_kadin)          
 
 
@@ -50,11 +79,13 @@ sum(is.na(data_son_temiz_kadin))
 
 ```
 
-2019 erkek verilerinin ayıklanması :
+## Cleaning 2019 Male Data
 
 ```{r}
+# This file contains poverty line and number of crime in 2019 male data
+
 data_collect_erkek_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx")
-# NA iceren satirlari silmek
+
 temiz_veri_erkek_2019 <- na.omit(data_collect_erkek_2019)          
 
 
@@ -71,10 +102,12 @@ sum(is.na(data_son_temiz_erkek_19))
 
 ```
 
-kadın - 2019 :
+## Cleaning 2019 Female Data
 
 ```{r}
-data_collect_kadin_2019 <- read_excel("assets/datas/Data_collection_2019_kadin.xlsx")
+# This file contains poverty line and number of crime in 2020 male data
+
+data_collect_kadin_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_2019_kadin.xlsx")
 
 # NA içeren satırları silmek
 temiz_veri_kadin_2019 <- na.omit(data_collect_kadin_2019)
@@ -99,3 +132,16 @@ sum(is.na(data_son_temiz_kadin_19))
 
 
 ```
+
+# R.data
+
+```{r}
+data1<-poverty_rate_19_20
+data2<-data_son_temiz_erkek
+data3<-data_son_temiz_kadin
+data4<-data_son_temiz_erkek_19
+data5<-data_son_temiz_kadin_19
+save(data1, data2,data3, data4, data5, file = "son_veriler.RData")
+```
+
+\#[Data](https://github.com/emu-hacettepe-analytics/emu430-fall2024-team-team_petra/blob/master/son_veriler.RData)

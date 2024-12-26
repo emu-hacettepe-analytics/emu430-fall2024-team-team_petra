@@ -153,7 +153,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#region-names" id="toc-region-names" class="nav-link active" data-scroll-target="#region-names">Region Names</a></li>
+  <li><a href="#library-presentation" id="toc-library-presentation" class="nav-link active" data-scroll-target="#library-presentation">Library Presentation</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
+  <li><a href="#region-number-düzeltilicek" id="toc-region-number-düzeltilicek" class="nav-link" data-scroll-target="#region-number-düzeltilicek">Region Number (Düzeltilicek)</a></li>
+  <li><a href="#poverty-rate-in-2019-2020-data" id="toc-poverty-rate-in-2019-2020-data" class="nav-link" data-scroll-target="#poverty-rate-in-2019-2020-data">Poverty Rate in 2019-2020 Data</a></li>
+  <li><a href="#cleaning-2020-male-data" id="toc-cleaning-2020-male-data" class="nav-link" data-scroll-target="#cleaning-2020-male-data">Cleaning 2020 Male Data</a></li>
+  <li><a href="#cleaning-2020-female-data" id="toc-cleaning-2020-female-data" class="nav-link" data-scroll-target="#cleaning-2020-female-data">Cleaning 2020 Female Data</a></li>
+  <li><a href="#cleaning-2019-male-data" id="toc-cleaning-2019-male-data" class="nav-link" data-scroll-target="#cleaning-2019-male-data">Cleaning 2019 Male Data</a></li>
+  <li><a href="#cleaning-2019-female-data" id="toc-cleaning-2019-female-data" class="nav-link" data-scroll-target="#cleaning-2019-female-data">Cleaning 2019 Female Data</a></li>
+  <li><a href="#r.data" id="toc-r.data" class="nav-link" data-scroll-target="#r.data">R.data</a></li>
   </ul>
 </nav>
 </nav>
@@ -183,23 +191,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="region-names" class="level2">
-<h2 class="anchored" data-anchor-id="region-names">Region Names</h2>
-<p><img src=".\assets/photos/Reagions.jpeg" class="img-fluid" width="300"></p>
+<section id="library-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="library-presentation">Library Presentation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line in 2019- 2020 and also it contains this data in term of reagions:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>poverty_rate_19_20 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Poverty Rate 2020-2019.xlsx"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(poverty_rate_19_20)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>[poverty_rate_19_20] data1</p>
+<p>[data_collect_erkek_2020] data2</p>
+<p>[data_collect_kadın_2020] data3</p>
+<p>[data_collect_erkek_2019] data4</p>
+<p>[data_collect_kadın_2019] data5</p>
+</section>
+<section id="region-number-düzeltilicek" class="level2">
+<h2 class="anchored" data-anchor-id="region-number-düzeltilicek">Region Number (Düzeltilicek)</h2>
+<p><img src=".\assets/photos/Reagions.jpeg" class="img-fluid" width="300"></p>
+</section>
+<section id="poverty-rate-in-2019-2020-data" class="level2">
+<h2 class="anchored" data-anchor-id="poverty-rate-in-2019-2020-data">Poverty Rate in 2019-2020 Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line in 2019- 2020 and also it contains this data in term of reginons:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>poverty_rate_19_20 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Poverty Rate 2020-2019.xlsx"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(poverty_rate_19_20)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [26 × 3] (S3: tbl_df/tbl/data.frame)
  $ Region_Number  : chr [1:26] "TR10" "TR21" "TR22" "TR31" ...
  $ Poverty Rate_20: num [1:26] 11 11 16 11 12 9 9 9 10 13 ...
  $ Poverty Rate_19: num [1:26] 11 13 12 11 13 9 8 9 10 10 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(poverty_rate_19_20)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(poverty_rate_19_20)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 26 × 3
    Region_Number `Poverty Rate_20` `Poverty Rate_19`
@@ -217,15 +260,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 16 more rows</code></pre>
 </div>
 </div>
-<p>2020 yılına ait erkek verilerinin temizlenmesi:</p>
+</section>
+<section id="cleaning-2020-male-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-2020-male-data">Cleaning 2020 Male Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_collect_erkek <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_erkek.xlsx"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>temiz_veri_erkek <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_erkek)          </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>veri_temiz_erkek <span class="ot">&lt;-</span> data_collect_erkek[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_erkek)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_erkek), ]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek <span class="ot">&lt;-</span> veri_temiz_erkek[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_erkek)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line and number of crime in 2020 male data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data_collect_erkek <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_erkek.xlsx"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>temiz_veri_erkek <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_erkek)          </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>veri_temiz_erkek <span class="ot">&lt;-</span> data_collect_erkek[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_erkek)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_erkek), ]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek <span class="ot">&lt;-</span> veri_temiz_erkek[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_erkek)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [26 × 31] (S3: tbl_df/tbl/data.frame)
  $ Region                                          : chr [1:26] "2- İstanbul" "3- Tekirdağ, Edirne, Kırklareli" "4- Balıkesir, Çanakkale" "5- İzmir" ...
@@ -260,24 +306,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ Unknown                                         : num [1:26] 61 5 2 14 7 6 10 10 10 8 ...
  $ Poverty Rate (%)                                : num [1:26] 11.4 10.5 16.1 11.1 11.7 9.4 9.2 8.8 9.9 13.2 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_erkek))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_erkek))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>2020 kadın verilerini temizlenmesi :</p>
+</section>
+<section id="cleaning-2020-female-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-2020-female-data">Cleaning 2020 Female Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_collect_kadin <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"assets/datas/Data_collection_kadin.xlsx"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NA iceren satirlari silmek</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>temiz_veri_kadin <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_kadin)          </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>veri_temiz_kadin <span class="ot">&lt;-</span> data_collect_kadin[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_kadin)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_kadin), ]</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin <span class="ot">&lt;-</span> veri_temiz_kadin[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_kadin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line adn number of crime in 2020 female data</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data_collect_kadin <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_kadin.xlsx"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>temiz_veri_kadin <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_kadin)          </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>veri_temiz_kadin <span class="ot">&lt;-</span> data_collect_kadin[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_kadin)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_kadin), ]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin <span class="ot">&lt;-</span> veri_temiz_kadin[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_kadin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [26 × 31] (S3: tbl_df/tbl/data.frame)
  $ Region                                          : chr [1:26] "2- İstanbul" "3- Tekirdağ, Edirne, Kırklareli" "4- Balıkesir, Çanakkale" "5- İzmir" ...
@@ -312,26 +362,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ Unknown                                         : num [1:26] 3 0 1 0 0 0 0 0 1 0 ...
  $ Poverty Rate (%)                                : num [1:26] 11.4 10.5 16.1 11.1 11.7 9.4 9.2 8.8 9.9 13.2 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_kadin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_kadin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>2019 erkek verilerinin ayıklanması :</p>
+</section>
+<section id="cleaning-2019-male-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-2019-male-data">Cleaning 2019 Male Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data_collect_erkek_2019 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NA iceren satirlari silmek</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>temiz_veri_erkek_2019 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_erkek_2019)          </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>veri_temiz_erkek_2019 <span class="ot">&lt;-</span> data_collect_erkek_2019[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_erkek_2019)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_erkek_2019), ]</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek_2019 <span class="ot">&lt;-</span> veri_temiz_erkek_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek_19<span class="ot">&lt;-</span>data_son_temiz_erkek_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>),]</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_erkek_19)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line and number of crime in 2019 male data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data_collect_erkek_2019 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>temiz_veri_erkek_2019 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_erkek_2019)          </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>veri_temiz_erkek_2019 <span class="ot">&lt;-</span> data_collect_erkek_2019[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_erkek_2019)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_erkek_2019), ]</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek_2019 <span class="ot">&lt;-</span> veri_temiz_erkek_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">43</span>,<span class="dv">44</span>,<span class="dv">45</span>,<span class="dv">47</span>,<span class="dv">48</span>,<span class="dv">49</span>,<span class="dv">50</span>,<span class="dv">51</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,<span class="dv">65</span>,<span class="dv">66</span>,<span class="dv">67</span>,<span class="dv">68</span>,<span class="dv">70</span>,<span class="dv">71</span>,<span class="dv">72</span>,<span class="dv">73</span>,<span class="dv">74</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">89</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">93</span>,<span class="dv">94</span>,<span class="dv">96</span>,<span class="dv">97</span>,<span class="dv">98</span>,<span class="dv">100</span>,<span class="dv">101</span>,<span class="dv">103</span>,<span class="dv">104</span>,<span class="dv">105</span>,<span class="dv">106</span>), ]</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>data_son_temiz_erkek_19<span class="ot">&lt;-</span>data_son_temiz_erkek_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>),]</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_erkek_19)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [26 × 31] (S3: tbl_df/tbl/data.frame)
  $ Region                                          : chr [1:26] "2- İstanbul" "3- Tekirdağ, Edirne, Kırklareli" "4- Balıkesir, Çanakkale" "5- İzmir" ...
@@ -366,34 +420,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ Unknown                                         : num [1:26] 4 2 4 1 1 0 0 3 1 5 ...
  $ Poverty Rate (%)                                : num [1:26] 11 13.3 11.7 11.1 12.7 8.8 8 8.6 9.7 10.1 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_erkek_19))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_erkek_19))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>kadın - 2019 :</p>
+</section>
+<section id="cleaning-2019-female-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-2019-female-data">Cleaning 2019 Female Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data_collect_kadin_2019 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"assets/datas/Data_collection_2019_kadin.xlsx"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># NA içeren satırları silmek</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>temiz_veri_kadin_2019 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_kadin_2019)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>veri_temiz_kadin_2019 <span class="ot">&lt;-</span> data_collect_kadin_2019[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_kadin_2019)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_kadin_2019), ]</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin_2019 <span class="ot">&lt;-</span> veri_temiz_kadin_2019[<span class="sc">-</span><span class="fu">c</span>(</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>,</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">33</span>, <span class="dv">34</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>, <span class="dv">41</span>, <span class="dv">43</span>,</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">44</span>, <span class="dv">45</span>, <span class="dv">47</span>, <span class="dv">48</span>, <span class="dv">49</span>, <span class="dv">50</span>, <span class="dv">51</span>, <span class="dv">53</span>, <span class="dv">54</span>, <span class="dv">55</span>,</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">59</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">63</span>, <span class="dv">65</span>, <span class="dv">66</span>, <span class="dv">67</span>, <span class="dv">68</span>,</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">70</span>, <span class="dv">71</span>, <span class="dv">72</span>, <span class="dv">73</span>, <span class="dv">74</span>, <span class="dv">75</span>, <span class="dv">77</span>, <span class="dv">78</span>, <span class="dv">79</span>, <span class="dv">81</span>,</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">82</span>, <span class="dv">83</span>, <span class="dv">84</span>, <span class="dv">86</span>, <span class="dv">87</span>, <span class="dv">88</span>, <span class="dv">89</span>, <span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">93</span>,</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">94</span>, <span class="dv">96</span>, <span class="dv">97</span>, <span class="dv">98</span>, <span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">105</span>, <span class="dv">106</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>), ]</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin_19<span class="ot">&lt;-</span>data_son_temiz_kadin_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>),]</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_kadin_19)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This file contains poverty line and number of crime in 2020 male data</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>data_collect_kadin_2019 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/Necati/Desktop/Data_collection_2019_kadin.xlsx"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># NA içeren satırları silmek</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>temiz_veri_kadin_2019 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_collect_kadin_2019)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>veri_temiz_kadin_2019 <span class="ot">&lt;-</span> data_collect_kadin_2019[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(data_collect_kadin_2019)) <span class="sc">!=</span> <span class="fu">ncol</span>(data_collect_kadin_2019), ]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin_2019 <span class="ot">&lt;-</span> veri_temiz_kadin_2019[<span class="sc">-</span><span class="fu">c</span>(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">33</span>, <span class="dv">34</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>, <span class="dv">41</span>, <span class="dv">43</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">44</span>, <span class="dv">45</span>, <span class="dv">47</span>, <span class="dv">48</span>, <span class="dv">49</span>, <span class="dv">50</span>, <span class="dv">51</span>, <span class="dv">53</span>, <span class="dv">54</span>, <span class="dv">55</span>,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">59</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">63</span>, <span class="dv">65</span>, <span class="dv">66</span>, <span class="dv">67</span>, <span class="dv">68</span>,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="dv">70</span>, <span class="dv">71</span>, <span class="dv">72</span>, <span class="dv">73</span>, <span class="dv">74</span>, <span class="dv">75</span>, <span class="dv">77</span>, <span class="dv">78</span>, <span class="dv">79</span>, <span class="dv">81</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">82</span>, <span class="dv">83</span>, <span class="dv">84</span>, <span class="dv">86</span>, <span class="dv">87</span>, <span class="dv">88</span>, <span class="dv">89</span>, <span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">93</span>,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">94</span>, <span class="dv">96</span>, <span class="dv">97</span>, <span class="dv">98</span>, <span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">105</span>, <span class="dv">106</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>), ]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>data_son_temiz_kadin_19<span class="ot">&lt;-</span>data_son_temiz_kadin_2019[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>),]</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_son_temiz_kadin_19)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [26 × 31] (S3: tbl_df/tbl/data.frame)
  $ Region                                          : chr [1:26] "2- İstanbul" "3- Tekirdağ, Edirne, Kırklareli" "4- Balıkesir, Çanakkale" "5- İzmir" ...
@@ -428,11 +486,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ Unknown                                         : num [1:26] 0 0 0 0 0 0 0 0 0 0 ...
  $ Poverty Rate (%)                                : num [1:26] 11 13.3 11.7 11.1 12.7 8.8 8 8.6 9.7 10.1 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_kadin_19))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(data_son_temiz_kadin_19))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
+</section>
+<section id="r.data" class="level1">
+<h1>R.data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span>poverty_rate_19_20</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span>data_son_temiz_erkek</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>data3<span class="ot">&lt;-</span>data_son_temiz_kadin</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>data4<span class="ot">&lt;-</span>data_son_temiz_erkek_19</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>data5<span class="ot">&lt;-</span>data_son_temiz_kadin_19</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data1, data2,data3, data4, data5, <span class="at">file =</span> <span class="st">"son_veriler.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#<a href="https://github.com/emu-hacettepe-analytics/emu430-fall2024-team-team_petra/blob/master/son_veriler.RData">Data</a></p>
 
 
 </section>
