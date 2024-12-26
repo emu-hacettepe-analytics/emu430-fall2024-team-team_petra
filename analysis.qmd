@@ -377,3 +377,33 @@ print(correlation_result)
 ```
 
 # Key Takeaways
+
+## **Poverty Rate 2019 vs 2020**
+
+In 2020, poverty rates **increased** in regions such as **TR21 (Tekirdağ, Edirne, Kırklareli), TR62 (Adana, Mersin) and TRA (Ağrı, Kars, Iğdır, Ardahan)**, while **decreasing** in **TRC2 (Şanlıurfa, Diyarbakır) and TRC3 (Mardin, Batman, Şırnak, Siirt)**. The **highest** poverty rates were observed in **TR63 (Hatay, Kahramanmaraş, Osmaniye) and TRA1 (Erzurum, Erzincan, Bayburt)** regions, while rates remained **lower** in metropolitan areas such as **TR10 (Istanbul) and TR51 (Ankara)**, but showed an upward trend in 2020.
+
+## Detailed Evaluation of Correlation Analysis Results
+
+### General View
+
+The results of the presented correlation analysis show that there is not as strong a relationship between poverty rate and homicide and robbery rates as expected. Analyses for both men and women did not reveal any significant correlation between these two variables, even when looking at data from different years.
+
+### Detailed Analysis and Comments
+
+-   **Weak Correlation Coefficients:** In most analyses, correlation coefficients were below 0.15. This indicates a very weak relationship between the two variables. In other words, it can be said that an increase in the poverty rate does not cause a significant increase in homicide or robbery rates.
+
+-   **Statistical Insignificance:** P-values are mostly above 0.05, indicating that the observed correlations are likely to have arisen by chance. This means that we cannot conclude that there is a causal relationship between poverty and crime based on these results.
+
+-   **Gender Differences:** Although there are some gender differences in the analyses, these differences are not statistically significant. That is, there is no significant difference between the results obtained for men and women.
+
+-   **Year-to-Year Comparison:** Analyses conducted for data from different years yielded similar results. This indicates that this relationship has not changed significantly over time.
+
+### Why might the results not meet our expectations?
+
+-   **Other Factors:** There are many other factors that may affect the relationship between poverty and crime (e.g. education level, unemployment rate, social inequality, family structure). Since this analysis only looks at the relationship between poverty and crime, the impact of other factors is ignored.
+
+-   **Data Limitations:** The scope and quality of the data set used can affect the results. For example, the data set may not be large or representative enough.
+
+-   **Complex Relationship:** The relationship between poverty and crime may be non-linear or have a more complex structure. In this case, Pearson correlation analysis may not fully capture this relationship.
+
+-   **Insufficient Economic Indicators:** Only the poverty rate may have been taken into account. The impact of other economic indicators such as income inequality and unemployment rate on crime can also be analyzed.
