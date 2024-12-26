@@ -53,7 +53,7 @@ sum(is.na(data_son_temiz_kadin))
 2019 erkek verilerinin ayıklanması :
 
 ```{r}
-data_collect_erkek_2019 <- read_excel("assets/datas/Data_collection_kadin.xlsx")
+data_collect_erkek_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx")
 # NA iceren satirlari silmek
 temiz_veri_erkek_2019 <- na.omit(data_collect_erkek_2019)          
 
