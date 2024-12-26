@@ -375,3 +375,5 @@ correlation_result <- cor.test(data_son_temiz_kadin_19$`Poverty Rate (%)`, data_
 
 print(correlation_result)
 ```
+
+# Key Takeaways
