@@ -92,11 +92,11 @@ format: html
 
 <li>[Necati Keleşer](https://emu-hacettepe-analytics.github.io/emu430-fall2024-nkeleser/)</li>
 
-<li>[Bihter Hasdemir](https://emu-hacettepe-analytics.github.io/emu430-fall2024-bihterhasdemir)/</li>
+<li>[Bihter Hasdemir](https://emu-hacettepe-analytics.github.io/emu430-fall2024-bihterhasdemir)</li>
 
-<li>[Öykü Tütüncü](https://emu-hacettepe-analytics.github.io/emu430-fall2024-oykutt)/</li>
+<li>[Öykü Tütüncü](https://emu-hacettepe-analytics.github.io/emu430-fall2024-oykutt)</li>
 
-<li>Ahmet Kürşad Gürel</li>
+<li>[Ahmet Kürşad Gürel](https://emu-hacettepe-analytics.github.io/emu430-fall2024-ahmetkgurel)</li>
 
 </ul>
 
