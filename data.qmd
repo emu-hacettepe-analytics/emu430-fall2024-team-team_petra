@@ -10,7 +10,6 @@ format:
     margin-right: 2cm
     margin-top: 2cm
     margin-bottom:2cm: "Data"
-  
 ---
 
 ## Library Presentation
@@ -37,7 +36,7 @@ library(dplyr)
 
 \[data_collect_kadın_2019\] data5
 
-## Region Number (Düzeltilicek)
+## Region Number  for Poverty Rate
 
 ![](/assets/photos/Reagions.jpeg){width="300"}
 
@@ -53,6 +52,10 @@ str(poverty_rate_19_20)
 
 print(poverty_rate_19_20)
 ```
+
+## Region Number for Male-Female 
+
+![](images/clipboard-2079312996.png)
 
 ## Cleaning 2020 Male Data
 
