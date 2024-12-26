@@ -49,21 +49,21 @@ b
 
 ```
 
-2020 Erkek verileri : Necati
+2020 Erkek verileri : Poverty Rate vs Homicide
 
-```{r}
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
 library(ggrepel)
 library(readxl)
+library(ggthemes)
 data_collect_erkek <- read_excel("C:/Users/Necati/Desktop/Data_collection_erkek.xlsx")
 temiz_veri_erkek <- na.omit(data_collect_erkek)          
 
 veri_temiz_erkek <- data_collect_erkek[rowSums(is.na(data_collect_erkek)) != ncol(data_collect_erkek), ]
 
 data_son_temiz_erkek <- veri_temiz_erkek[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
-data_son_temiz_erkek$`Poverty Rate (%)` <- as.numeric(data_son_temiz_erkek$`Poverty Rate (%)`)
 
 
-b <- ggplot(data_son_temiz_erkek, aes(x = `Poverty Rate (%)`, y = Threat, color = Region)) +
+b <- ggplot(data_son_temiz_erkek, aes(x = `Poverty Rate (%)`, y = Homicide, color = Region)) +
   geom_point(size = 3) +  # Noktaları boyutlandırma
   geom_smooth(method = "lm", se = FALSE, color = "black") + 
   theme_minimal() +
@@ -77,17 +77,19 @@ b <- ggplot(data_son_temiz_erkek, aes(x = `Poverty Rate (%)`, y = Threat, color 
 
 b
 
-str(data_son_temiz_erkek$`Poverty Rate (%)`)
-sum(is.na(data_son_temiz_erkek$`Poverty Rate (%)`))
+```
 
-
-
+```{r}
+#(Povery Rate vs Homicide -Male 20)
+correlation_result <- cor.test(data_son_temiz_erkek$`Poverty Rate (%)`, data_son_temiz_erkek$Bribery, method = "pearson")
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
 ```
 
 2020 Kadın Verileri
 
 ```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
-data_collect_kadin <- read_excel("assets/datas/Data_collection_kadin.xlsx")
+data_collect_kadin <- read_excel("C:/Users/Necati/Desktop/Data_collection_kadin.xlsx")
 # NA iceren satirlari silmek
 temiz_veri_kadin <- na.omit(data_collect_kadin)          
 
@@ -116,17 +118,20 @@ b <- ggplot(data_son_temiz_kadin, aes(x = `Poverty Rate (%)`, y = Homicide, colo
 
 print(b)
 
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Homicide -Female 20)
 correlation_result <- cor.test(data_son_temiz_kadin$`Poverty Rate (%)`, data_son_temiz_kadin$Homicide, method = "pearson")
 
 # Korelasyon sonuçlarını yazdırma
 print(correlation_result)
-
 ```
 
 2019 Erkek Verileri
 
-```{r}
-data_collect_erkek_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_erkek.xlsx")
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
+data_collect_erkek_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx")
 # NA iceren satirlari silmek
 temiz_veri_erkek_2019 <- na.omit(data_collect_erkek_2019)          
 
@@ -151,15 +156,12 @@ b <- ggplot(data_son_temiz_erkek_2019, aes(x = `Poverty Rate (%)`, y = Homicide,
 # Grafiği yazdırma
 print(b)
 
-# Minimum ve maksimum değerleri hesaplama
-min_value <- min(data_son_temiz_erkek_2019$`Poverty Rate (%)`, na.rm = TRUE)
-max_value <- max(data_son_temiz_erkek_2019$`Poverty Rate (%)`, na.rm = TRUE)
 
-# Sonuçları yazdırma
-print(min_value)
-print(max_value)
 
-# Pearson korelasyonu hesaplama
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Homicide -Male 19)
 correlation_result <- cor.test(data_son_temiz_erkek_2019$`Poverty Rate (%)`, data_son_temiz_erkek_2019$Homicide, method = "pearson")
 
 # Korelasyon sonuçlarını yazdırma
@@ -168,7 +170,7 @@ print(correlation_result)
 
 2019 Kadın Verileri
 
-```{r}
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
 data_collect_kadin_2019 <- read_excel("assets/datas/Data_collection_2019_kadin.xlsx")
 
 # NA içeren satırları silmek
@@ -190,25 +192,180 @@ b<- ggplot(data_son_temiz_kadin_2019, aes(x = `Poverty Rate (%)`, y = Homicide, 
   geom_point(size = 3) +  # Noktaları boyutlandırma
   geom_smooth(method = "lm", se = FALSE, color = "black") + 
   theme_minimal() +
-  labs(title = "Poverty Rate vs Homicide -Male19",
+  labs(title = "Poverty Rate vs Homicide -Female19",
        x = "Yoksulluk Oranı (%)",
        y = "Suç Oranı") +
   scale_x_continuous(limits = c(4,16))+
   scale_y_continuous(limits = c(0,50))+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50)+theme_fivethirtyeight()
 b
 
-min_value <- min(data_son_temiz_kadin_2019$Homicide, na.rm = TRUE)
-max_value <- max(data_son_temiz_kadin_2019$Homicide, na.rm = TRUE)
-
-# Sonuçları yazdırmak
-min_value
-max_value
 
 
-# Pearson korelasyonu hesaplamak
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Homicide -Female 19)
 correlation_result <- cor.test(data_son_temiz_kadin_2019$`Poverty Rate (%)`, data_son_temiz_kadin_2019$Homicide, method = "pearson")
 
-# Sonuçları görüntülemek
-correlation_result
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+```
 
+2020 Erkek Verileri-Poverty Rate vs Bribery
+
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
+library(ggrepel)
+library(readxl)
+library(ggthemes)
+data_collect_erkek <- read_excel("C:/Users/Necati/Desktop/Data_collection_erkek.xlsx")
+temiz_veri_erkek <- na.omit(data_collect_erkek)          
+
+veri_temiz_erkek <- data_collect_erkek[rowSums(is.na(data_collect_erkek)) != ncol(data_collect_erkek), ]
+
+data_son_temiz_erkek <- veri_temiz_erkek[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+data_son_temiz_erkek$`Poverty Rate (%)` <- as.numeric(data_son_temiz_erkek$`Poverty Rate (%)`)
+
+
+b <- ggplot(data_son_temiz_erkek, aes(x = `Poverty Rate (%)`, y = Robbery, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Robbery -Male20",
+       x = "Poverty Rate (%)",
+       y = "Homicide") +
+  scale_x_continuous(limits = c(6, 18)) +  # X eksenini sayısal olarak sınırlandırma
+  scale_y_continuous(limits = c(0, 600)) +  
+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50) +
+  theme_fivethirtyeight()
+
+b
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Bribery -Male 20)
+correlation_result <- cor.test(data_son_temiz_erkek$`Poverty Rate (%)`, data_son_temiz_erkek$Robbery, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+```
+
+2020 Kadın Verileri-Poverty Rate vs Robbery
+
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
+data_collect_kadin <- read_excel("C:/Users/Necati/Desktop/Data_collection_kadin.xlsx")
+# NA iceren satirlari silmek
+temiz_veri_kadin <- na.omit(data_collect_kadin)          
+
+
+veri_temiz_kadin <- data_collect_kadin[rowSums(is.na(data_collect_kadin)) != ncol(data_collect_kadin), ]
+
+
+data_son_temiz_kadin <- veri_temiz_kadin[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+b <- ggplot(data_son_temiz_kadin, aes(x = `Poverty Rate (%)`, y = Robbery, color = Region)) +
+  geom_point(size = 5) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Robbery -Female20",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(6,18)) +
+  scale_y_continuous(limits = c(0,28)) +  
+  geom_label_repel(aes(label = Region_Number,size = 5), size = 5, max.overlaps = 50) +
+
+  theme(
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.text = element_text(size = 12),
+    legend.key.size = unit(0.5,"lines")
+)
+
+print(b)
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Homicide -Female 20)
+correlation_result <- cor.test(data_son_temiz_kadin$`Poverty Rate (%)`, data_son_temiz_kadin$Robbery, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+```
+
+2019 Erkek Verileri-Poverty Rate vs Robbery
+
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
+data_collect_erkek_2019 <- read_excel("C:/Users/Necati/Desktop/Data_collection_2019_erkek.xlsx")
+# NA iceren satirlari silmek
+temiz_veri_erkek_2019 <- na.omit(data_collect_erkek_2019)          
+
+
+veri_temiz_erkek_2019 <- data_collect_erkek_2019[rowSums(is.na(data_collect_erkek_2019)) != ncol(data_collect_erkek_2019), ]
+
+
+data_son_temiz_erkek_2019 <- veri_temiz_erkek_2019[-c(1,2,5,6,7,9,10,13,14,15,17,18,19,20,22,23,24,26,27,28,29,30,33,34,36,37,38,40,41,43,44,45,47,48,49,50,51,53,54,55,57,58,59,61,62,63,65,66,67,68,70,71,72,73,74,75,77,78,79,81,82,83,84,86,87,88,89,91,92,93,94,96,97,98,100,101,103,104,105,106), ]
+data_son_temiz_erkek_19<-data_son_temiz_erkek_2019[-c(27,28,29,30),]
+
+b <- ggplot(data_son_temiz_erkek_19, aes(x = `Poverty Rate (%)`, y = Robbery, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") +  # Regresyon çizgisi ekleme
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Robbery -Male19",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(4, 16)) +  # X ekseni limitleri
+  scale_y_continuous(limits = c(0, 3300)) +  # Y ekseni limitleri
+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50) +  # Etiketler için
+  theme_fivethirtyeight()  # Grafik teması
+
+# Grafiği yazdırma
+print(b)
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Robbery -Female 29)
+correlation_result <- cor.test(data_son_temiz_erkek_19$`Poverty Rate (%)`, data_son_temiz_erkek_19$Robbery, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
+```
+
+2019 Kadın Verileri-Poverty Rate vs Robbery
+
+```{r, fig.width=17, fig.height=7, dpi=300, out.width="100%"}
+data_collect_kadin_2019 <- read_excel("assets/datas/Data_collection_2019_kadin.xlsx")
+
+# NA içeren satırları silmek
+temiz_veri_kadin_2019 <- na.omit(data_collect_kadin_2019)
+
+veri_temiz_kadin_2019 <- data_collect_kadin_2019[rowSums(is.na(data_collect_kadin_2019)) != ncol(data_collect_kadin_2019), ]
+
+data_son_temiz_kadin_2019 <- veri_temiz_kadin_2019[-c(
+  1, 2, 5, 6, 7, 9, 10, 13, 14, 15,
+  17, 18, 19, 20, 22, 23, 24, 26, 27, 28,
+  29, 30, 33, 34, 36, 37, 38, 40, 41, 43,
+  44, 45, 47, 48, 49, 50, 51, 53, 54, 55,
+  57, 58, 59, 61, 62, 63, 65, 66, 67, 68,
+  70, 71, 72, 73, 74, 75, 77, 78, 79, 81,
+  82, 83, 84, 86, 87, 88, 89, 91, 92, 93,
+  94, 96, 97, 98, 100, 101, 103, 104, 105, 106
+), ]
+data_son_temiz_kadin_19<-data_son_temiz_kadin_2019[-c(27,28,29,30),]
+
+b<- ggplot(data_son_temiz_kadin_19, aes(x = `Poverty Rate (%)`, y = Robbery, color = Region)) +
+  geom_point(size = 3) +  # Noktaları boyutlandırma
+  geom_smooth(method = "lm", se = FALSE, color = "black") + 
+  theme_minimal() +
+  labs(title = "Poverty Rate vs Robbery -Female19",
+       x = "Yoksulluk Oranı (%)",
+       y = "Suç Oranı") +
+  scale_x_continuous(limits = c(4,16))+
+  scale_y_continuous(limits = c(0,30))+  geom_label_repel(aes(label = Region_Number), size = 3, max.overlaps = 50)+theme_fivethirtyeight()
+b
+```
+
+```{r}
+# Pearson korelasyonu hesaplama(Povery Rate vs Homicide -Female 20)
+correlation_result <- cor.test(data_son_temiz_kadin_19$`Poverty Rate (%)`, data_son_temiz_kadin_19$Homicide, method = "pearson")
+
+# Korelasyon sonuçlarını yazdırma
+print(correlation_result)
 ```
