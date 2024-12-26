@@ -1,18 +1,10 @@
 ---
-pdftitle: "Team_petra" 
-sidebar: false
-format:
-  pdf:
-    colorlinks: true
-    papersize: a4
-    fontsize: 11pt
-    margin-left: 2cm
-    margin-right: 2cm
-    margin-top: 2cm
-    margin-bottom:2cm: "Data"
-
+title: "EMU Data Analytics Project"
+format: html
+toc: false
 ---
 
+```{=html}
 <style>
   #quarto-sidebar {
     display: none; /* Completely hide the sidebar */
@@ -21,12 +13,14 @@ format:
     display: none; /* Hide any collapsible sidebar */
   }
 </style>
+```
 
 ---
 title: "EMU Data Analytics Project"
 format: html
 ---
 
+```{=html}
 <style>
   /* Global background */
   body {
@@ -83,6 +77,7 @@ format: html
     margin: 0 auto 20px; /* Center the image */
   }
 </style>
+```
 
 ::: content-box
 <h2>WELCOME TO THE EMU!</h2>
@@ -112,21 +107,12 @@ format: html
 <h2>Data Sets</h2>
 
 <ul>
-  <li>
-    Convicted offenders admitted to penal institutions by type of crime and province where the crime was committed, 2011-2020. 
-    (<strong>Source:</strong> TUİK)
-    <br>
-    <a href="assets/datas/crime_statistics.xls" download="crime_statistics.xlsx">Click here to download xls</a>
-  </li>
 
-  <li>
-    Regional poverty numbers and poverty rates based on equivalent household disposable income per capita, 2014-2023.
-    (<strong>Source:</strong> TUİK)
-    <br>
-    <a href="assets/datas/poverty_statistics.xls" download="poverty_statistics.xlsx">Click here to download xls</a>
-  </li>
+<li>Convicted offenders admitted to penal institutions by type of crime and province where the crime was committed, 2011-2020. (<strong>Source:</strong> TUİK) <br> <a href="assets/datas/crime_statistics.xls" download="crime_statistics.xlsx">Click here to download xls</a></li>
+
+<li>Regional poverty numbers and poverty rates based on equivalent household disposable income per capita, 2014-2023. (<strong>Source:</strong> TUİK) <br> <a href="assets/datas/poverty_statistics.xls" download="poverty_statistics.xlsx">Click here to download xls</a></li>
+
 </ul>
-
 
 <h2>Project's Steps</h2>
 

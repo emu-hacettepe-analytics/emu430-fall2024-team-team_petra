@@ -1,15 +1,5 @@
 ---
-pdftitle: "Team_petra" 
-sidebar: false
-format:
-  pdf:
-    colorlinks: true
-    papersize: a4
-    fontsize: 11pt
-    margin-left: 2cm
-    margin-right: 2cm
-    margin-top: 2cm
-    margin-bottom:2cm: "Data"
+title: "Team_petra" 
 ---
 
 ## Library Presentation
@@ -36,7 +26,7 @@ library(dplyr)
 
 \[data_collect_kadın_2019\] data5
 
-## Region Number  for Poverty Rate
+## Region Number for Poverty Rate
 
 ![](/assets/photos/Reagions.jpeg){width="300"}
 
@@ -53,7 +43,7 @@ str(poverty_rate_19_20)
 print(poverty_rate_19_20)
 ```
 
-## Region Number for Male-Female 
+## Region Number for Male-Female
 
 ![](images/clipboard-2079312996.png)
 
